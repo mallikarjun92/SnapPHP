@@ -20,6 +20,5 @@
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/snapphp.git
-
+   git clone https://github.com/mallikarjun92/SnapPHP.git
 
