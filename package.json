@@ -1,0 +1,20 @@
+{
+  "name": "snapphp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@symfony/webpack-encore": "^5.0.1",
+    "sass": "^1.79.4",
+    "sass-loader": "^16.0.1",
+    "webpack": "^5.95.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-notifier": "^1.15.0"
+  }
+}
