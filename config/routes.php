@@ -1,7 +1,7 @@
 <?php
 
 use \core\Router;
-use \app\HomeController;
+use \app\controllers\HomeController;
 
 $router = new Router();
 

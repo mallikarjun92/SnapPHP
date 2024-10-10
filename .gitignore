@@ -1,4 +1,4 @@
 node_modules
 public/assets/build
-public/assets/images
-assets/images
+public/assets/images/*
+assets/images/*
