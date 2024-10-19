@@ -1,13 +1,31 @@
 <?php
 
-use \core\Router;
-use \app\controllers\HomeController;
+// use Core\Router;
+// use Symfony\Component\HttpFoundation\Response;
 
-$router = new Router();
+// use App\Controllers\HomeController;
 
-// add/define all the routes as required
-$router->add('/', [new HomeController(), 'index']);
-$router->add('/about', [new HomeController(), 'about']);
+// // Initialized the router in boot()
+
+// // Define routes with optional names
+// $router->add('GET', '/', function() {
+//     $controller = new HomeController();
+//     return new Response($controller->index());
+// }, 'home');
 
 
-$router->dispatch($_SERVER['REQUEST_URI']);
+// $router->add('GET', '/about', function() {
+//     $controller = new HomeController();
+//     return new Response($controller->about());
+// }, 'about');
+
+use App\Controllers\HomeController;
+// use App\Controllers\UserController;
+use Core\Router;
+
+// $router = new Router();
+
+$router->add('GET', '/', [HomeController::class, 'index'], 'home');
+// $router->add('GET', '/user/{id}', [UserController::class, 'show'], 'user_show');
+// $router->add('POST', '/user/create', [UserController::class, 'store'], 'user_create');
+$router->add('GET', '/about', [HomeController::class, 'home/about'], 'about');

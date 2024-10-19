@@ -2,3 +2,10 @@ node_modules
 public/assets/build
 public/assets/images/*
 assets/images/*
+logs
+build
+
+vendor/
+
+composer.lock
+package-lock.json

@@ -1,0 +1,22 @@
+{
+    "name": "malli/snap-php",
+    "description": "Light weight MVC framework",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Mallikarjun",
+            "email": "mallikarjun016.rymec@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/http-foundation": "^6.0",
+        "twig/twig": "^3.0",
+        "doctrine/annotations": "^1.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        }
+    }
+}
