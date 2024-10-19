@@ -14,7 +14,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        
+
         return $this->render('home.html.twig', ['message' => 'Welcome to SnapPHP!']);
     }
 
@@ -24,5 +24,13 @@ class HomeController extends Controller
     public function about(Request $request)
     {
         return $this->render('about.htm.twig', ['content' => 'This is about page']);
+    }
+
+    /**
+     * reserved for 404 page
+     */
+    public function notFound()
+    {
+        return $this->render('404.html.twig', ['content' => 'Page Not Found']);
     }
 }

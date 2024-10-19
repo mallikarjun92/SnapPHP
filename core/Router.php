@@ -2,6 +2,7 @@
 
 namespace Core;
 
+use App\Controllers\HomeController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use ReflectionMethod;
@@ -69,7 +70,10 @@ class Router
             }
         }
 
-        return new Response('Page Not Found', 404);
+        // return new Response('Page Not Found', 404);
+        $home = new HomeController($this, $request);
+        return $home->notFound();
+
     }
 
     private function convertToRegex($path)
