@@ -31,6 +31,7 @@ class HomeController extends Controller
      */
     public function notFound()
     {
+        header('code', 404);
         return $this->render('404.html.twig', ['content' => 'Page Not Found']);
     }
 }

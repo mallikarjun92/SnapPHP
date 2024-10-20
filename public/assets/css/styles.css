@@ -1,3 +1,9 @@
+/* variables */
+:root {
+    --debug-code: #f9f3f6;
+    --debug-code-bcg: #444445;
+}
+
 /* General Styles */
 * {
     margin: 0;
@@ -12,7 +18,6 @@ body {
     background-color: #f4f7f6;
     line-height: 1.6;
     padding: 20px;
-    display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -89,4 +94,14 @@ footer a:hover {
         padding: 8px 16px;
         font-size: 0.9rem;
     }
+}
+
+.debug-info code {
+    /* border: 1px, solid, var(--debug-code); */
+    padding: 2px;
+    color: var(--debug-code);
+    background-color: var(--debug-code-bcg);
+    border-radius: 2px;
+    font-size: small;
+    font-weight:700;
 }

@@ -5,6 +5,7 @@ namespace Core;
 use App\Controllers\HomeController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+
 use ReflectionMethod;
 
 class Router
@@ -30,7 +31,7 @@ class Router
         }
     }
 
-    public function dispatch(Request $request): Response
+    public function dispatch(Request $request, Debug $debug): Response
     {
         $method = $request->getMethod();
         $uri = rtrim($request->getPathInfo(), '/') ?: '/';
@@ -42,6 +43,9 @@ class Router
             if (preg_match($pattern, $uri, $matches)) {
                 array_shift($matches);
                 $params = $matches;
+
+                // Log the route matched (for debug purposes)
+                $debug->logQuery("Matched route: <code>{$route['path']}</code> with method <code>{$method}</code>");
 
                 if (is_callable($route['handler'])) {
                     return call_user_func_array($route['handler'], $params, $this);

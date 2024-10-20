@@ -6,16 +6,21 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Core\Annotations\Route;
+use Core\Debug;
 use ReflectionClass;
 
 class Kernel
 {
     protected $router;
+    protected $debug;
 
     public function boot()
     {
         // Initialize the router
         $this->router = new Router();
+
+        // Initialize the debug
+        $this->debug = new Debug();
 
         // Load routes by scanning the controllers
         $this->loadRoutesFromControllers();
@@ -29,7 +34,7 @@ class Kernel
      */
     public function handle(Request $request): Response
     {
-        return $this->router->dispatch($request);
+        return $this->router->dispatch($request, $this->debug);
     }
 
     /**
@@ -41,6 +46,7 @@ class Kernel
     public function terminate(Request $request, Response $response)
     {
         $response->send();
+        $this->debug->render(); // Render debug information at the end
     }
 
     /**
