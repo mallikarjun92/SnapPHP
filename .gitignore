@@ -1,11 +1,20 @@
 node_modules
+vendor/
+
 public/assets/build
 public/assets/images/*
 assets/images/*
-logs
 build
 
-vendor/
+# any logs
+logs
 
+# dependency lock files
 composer.lock
 package-lock.json
+
+# code editor files
+.buildpath
+.vs
+.settings
+.project

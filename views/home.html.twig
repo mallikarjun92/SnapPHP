@@ -1,22 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SnapPHP Home</title>
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('build/css/styles.css') }}">
-</head>
-<body>
+{% extends 'base.html.twig' %}
 
-    <div class="container">
-        <h1>{{ message }}</h1>
-        <p>This is a lightweight PHP framework designed to help you build faster and simpler applications.</p>
-        <button class="button link"><a href="https://github.com/dinzin-tech" target="_blank">Go To Repo</a></button>
-        <button class="button link"><a href="{{ route('about') }}">About</a></button>
+{% block title %}SnapPHP Home{% endblock %}
 
-        <footer>
-            <p>Built with ❤️ by <a href="#">DinZin</a></p>
-        </footer>
+{% block content %}
+<div class="container">
+	<h1>{{ message }}</h1>
+	
+    <p>This is a lightweight PHP framework designed to help you build faster and simpler applications.</p>
+    
+    <div>
+    	<button class="button link"><a href="https://github.com/dinzin-tech" target="_blank">Go To Repo</a></button>
+    	<button class="button link"><a href="{{ route('about') }}">About</a></button>
     </div>
-
-</body>
-</html>
+</div>
+{% endblock %}

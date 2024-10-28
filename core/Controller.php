@@ -7,7 +7,12 @@ use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
 
-// TODO: define getRouter method if neccessary
+/**
+ * 
+ * 
+ * @author malli
+ *
+ */
 abstract class Controller
 {
     protected $twig;
@@ -48,10 +53,10 @@ abstract class Controller
      * TODO: Resolve getRouter issue
      * 
      */
-    protected function redirect($route, $params = [])
+    protected function redirectTo($route, $params = [])
     {
 
-        $url = $this->getRouter()->getRouteByName($route, $params);
+        $url = $this->router->getRouteByName($route, $params);
 
         return new Response('', 302, ['Location' => $url]);
     }
@@ -67,5 +72,14 @@ abstract class Controller
     {
         $baseUrl = '/assets/';
         return $baseUrl . $path;
+    }
+    
+    /**
+     * 
+     * @return Router
+     */
+    public function getRouter() : Router
+    {
+        return $this->router;
     }
 }

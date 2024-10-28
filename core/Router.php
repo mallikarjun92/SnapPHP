@@ -60,6 +60,7 @@ class Router
                     $parameters = $reflectionMethod->getParameters();
                     $args = [];
 
+                    // TODO: fix getClass is deprecated issue
                     foreach ($parameters as $param) {
                         if ($param->getClass() && $param->getClass()->name === Request::class) {
                             $args[] = $request; // Inject the Request object
@@ -75,6 +76,11 @@ class Router
         }
 
         // return new Response('Page Not Found', 404);
+        
+        // log route query for dev
+        $debug->logQuery("No route matches for: <code>{$uri}</code> with method <code>{$method}</code>");
+        
+        // send 404
         $home = new HomeController($this, $request);
         return $home->notFound();
 

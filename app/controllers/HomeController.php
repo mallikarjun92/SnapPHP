@@ -15,7 +15,11 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        return $this->render('home.html.twig', ['message' => 'Welcome to SnapPHP!']);
+        // return $this->redirectTo('legal');
+        return $this->render('home.html.twig', [
+            'message' => 'Welcome to SnapPHP!',
+            // 'legal_route' => $this->router->getRouteByName('legal')
+        ]);
     }
 
     /**
@@ -31,7 +35,7 @@ class HomeController extends Controller
      */
     public function notFound()
     {
-        header('code', 404);
-        return $this->render('404.html.twig', ['content' => 'Page Not Found']);
+        $content = $this->twig->render('404.html.twig', ['content' => 'Page Not Found']);
+        return new Response($content, '404');
     }
 }
