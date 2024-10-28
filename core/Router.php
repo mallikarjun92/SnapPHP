@@ -80,7 +80,7 @@ class Router
         // log route query for dev
         $debug->logQuery("No route matches for: <code>{$uri}</code> with method <code>{$method}</code>");
         
-        // send 404
+        // use custom 404 page
         $home = new HomeController($this, $request);
         return $home->notFound();
 
