@@ -10,6 +10,7 @@ use Dotenv\Dotenv;
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
 // TODO: $_ENV and set to approproite variable if neccessary
+// TODO: seperate git repository for core development and app development
 
 // Create request from globals
 $request = Request::createFromGlobals();
