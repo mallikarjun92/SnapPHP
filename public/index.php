@@ -9,6 +9,7 @@ use Dotenv\Dotenv;
 // Load .env file
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
 $dotenv->load();
+// TODO: $_ENV and set to approproite variable if neccessary
 
 // Create request from globals
 $request = Request::createFromGlobals();

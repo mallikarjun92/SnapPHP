@@ -4,6 +4,10 @@ namespace Core;
 
 use PDO;
 
+// TODO: add functionality to connect DB
+// TODO: integrate ORM
+// TODO: implement DB migration system
+
 class Model {
     protected $pdo;
 
