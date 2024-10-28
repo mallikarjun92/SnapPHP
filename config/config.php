@@ -7,3 +7,5 @@ return [
         'password' => '1234'
     ]
 ];
+
+// TODO: clean up config directory

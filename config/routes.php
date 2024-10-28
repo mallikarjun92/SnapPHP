@@ -1,5 +1,7 @@
 <?php
 
+// TODO: cleanup this file
+
 // use Core\Router;
 // use Symfony\Component\HttpFoundation\Response;
 
