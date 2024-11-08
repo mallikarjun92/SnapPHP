@@ -27,7 +27,9 @@ class HomeController extends Controller
      */
     public function about(Request $request)
     {
-        return $this->render('about.htm.twig', ['content' => 'This is about page']);
+        return $this->render('about.htm.twig', [
+            'content' => 'This is about page'
+        ]);
     }
 
     /**
@@ -35,7 +37,10 @@ class HomeController extends Controller
      */
     public function notFound()
     {
-        $content = $this->twig->render('404.html.twig', ['content' => 'Page Not Found']);
+        $content = $this->twig->render('404.html.twig', [
+            'content' => 'Page Not Found'
+        ]);
+        
         return new Response($content, '404');
     }
 }

@@ -52,6 +52,9 @@ class Router
                 } elseif (is_array($route['handler'])) {
                     list($controllerClass, $action) = $route['handler'];
 
+                    // log the controller and its method for devs
+                    $debug->logQuery("Controller: <code>$controllerClass</code> Method: <code>$action</code>");
+
                     // Instantiate the controller and pass the Request object
                     $controller = new $controllerClass($this, $request);
 
